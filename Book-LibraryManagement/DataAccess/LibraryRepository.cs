@@ -6,14 +6,23 @@ using System.Net.Http.Json;
 using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
-using System.Xml;
 
 using Newtonsoft.Json;
 namespace Book_LibraryManagement.DataAccess
 {
     public class LibraryRepository
     {
+
         private readonly string _filePath = "books.json";
+
+        // constructor 
+        public LibraryRepository()
+        {
+            if (!File.Exists(_filePath))
+            {
+                File.WriteAllText(_filePath, "[]");
+            }
+        }
 
         public void AddBook(Book book)
         {
@@ -65,8 +74,9 @@ namespace Book_LibraryManagement.DataAccess
 
         private void SaveAllBooks(List<Book> books)
         {
-            var jsonData = JsonConvert.SerializeObject(books, Formatting.Indented);
+            var jsonData = JsonConvert.SerializeObject(books, Newtonsoft.Json.Formatting.Indented);
             File.WriteAllText(_filePath, jsonData);
         }
+
     }
 }
