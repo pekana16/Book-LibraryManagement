@@ -15,6 +15,7 @@ namespace Book_LibraryManagement.UI
             {
                 Console.Clear();  // simple to clear the console to get that "fresh" menu
                 Console.WriteLine("=== Book Management System ===");
+                // CRUD operations
                 Console.WriteLine("1) Add Book");
                 Console.WriteLine("2) List All Books");
                 Console.WriteLine("3) Search Book by ID");
@@ -24,6 +25,8 @@ namespace Book_LibraryManagement.UI
                 Console.Write("Enter choice: ");
 
                 string input = Console.ReadLine();
+
+                // different option chosen based on the user's input
                 switch (input)
                 {
                     case "1":

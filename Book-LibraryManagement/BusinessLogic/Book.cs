@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Book_LibraryManagement.BusinessLogic
 {
+    // some basic stuff -> id, title, author
     public class Book
     {
         public int Id { get; set; }

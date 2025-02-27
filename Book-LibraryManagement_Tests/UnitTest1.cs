@@ -5,6 +5,8 @@ namespace Book_LibraryManagement_Tests
     [TestFixture]
     public class LibraryManagerTests
     {
+
+        // LibraryManager from the BusinessLogic layer
         private LibraryManager _manager;
 
         [SetUp]
@@ -15,6 +17,7 @@ namespace Book_LibraryManagement_Tests
 
         }
 
+        // test for adding new books
         [Test]
         public void AddNewBook_ShouldIncreaseBookCount()
         {
@@ -29,6 +32,7 @@ namespace Book_LibraryManagement_Tests
             Assert.That(newCount, Is.EqualTo(initialCount + 1));
         }
 
+        // test for getting the books with their ID
         [Test]
         public void GetBookById_ShouldReturnCorrectBook()
         {
@@ -45,6 +49,7 @@ namespace Book_LibraryManagement_Tests
             Assert.That(foundBook.Title, Is.EqualTo("Some Title"));
         }
 
+        // test for deleting the book
         [Test]
         public void DeleteBook_ShouldRemoveBookFromCollection()
         {

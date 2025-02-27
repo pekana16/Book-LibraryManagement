@@ -9,8 +9,10 @@ namespace Book_LibraryManagement.BusinessLogic
 {
     public class LibraryManager
     {
+        // instance of LibraryRepository
         private readonly LibraryRepository _repo;
 
+        // constructor for LibraryManager
         public LibraryManager()
         {
             _repo = new LibraryRepository(); 
@@ -52,6 +54,7 @@ namespace Book_LibraryManagement.BusinessLogic
             _repo.DeleteBook(id);
         }
 
+        // simply generates a unique ID for a new book
         private int GenerateNewId()
         {
             var allBooks = _repo.GetAllBooks();
